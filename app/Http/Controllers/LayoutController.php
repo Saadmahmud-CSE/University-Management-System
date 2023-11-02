@@ -6,8 +6,14 @@ use Illuminate\Http\Request;
 
 class LayoutController extends Controller
 {
+    public function studentenroll(){
+        return view('admin.pages.studentenroll');
+    }
     public function dashboard(){
         return view('admin.pages.dashboard');
+    }
+    public function users(){
+        return view('admin.pages.users');
     }
     public function forms(){
         return view('admin.pages.forms');

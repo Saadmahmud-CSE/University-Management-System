@@ -13,7 +13,7 @@ class EmployeeController extends Controller
     }
     public function store(Request $req){
         // Eloquent ORM
-      /*   $obj = new Employee(); // employees
+      /*$obj = new Employee(); // employees
         $obj->name= $req->name;
         $obj->email= $req->email;
         $obj->birth_date= $req->birth_date;

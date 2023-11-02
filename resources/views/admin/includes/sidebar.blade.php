@@ -2,24 +2,41 @@
  <aside id="sidebar" class="sidebar bg-primary">
 
 <ul class="sidebar-nav bg-info" id="sidebar-nav">
-
   <li class="nav-item">
     <a class="nav-link" href="{{ url('admin/dashboard') }}">
       <i class="bi bi-grid"></i>
-      <span>Dashboard</span>
+      <span>Home</span>
     </a>
-  </li><!-- End Dashboard Nav -->
+  @if(Session::has('userrole') && Session::get('userrole')=='Student')
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url('admin/studentenroll') }}">
+      <i class="bi bi-person"></i><span>Students Information</span>
+    </a>
+  </li>
 
   <li class="nav-item">
+    <a class="nav-link" href="{{ url('admin/projectidea') }}">
+      <i class="bi bi-file-text"></i><span>Project Idea</span>
+    </a>
+  </li>
+      
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url('admin/createteam') }}">
+      <i class="bi bi-people"></i><span>Create Group</span>
+    </a>
+  </li>
+@endif
+  <li class="nav-item">
     <a class="nav-link" href="{{ url('admin/sessions') }}">
-      <i class="bi bi-grid"></i>
+      <i class="bi bi-grid-fill"></i>
       <span>Sessions</span>
     </a>
   </li>
 
   <li class="nav-item">
     <a class="nav-link" href="{{ url('admin/departments') }}">
-      <i class="bi bi-grid"></i>
+      <i class="bi bi-file-text"></i>
       <span>Departments</span>
     </a>
   </li>
@@ -32,7 +49,7 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" href="{{ url('admin/courses') }}">
-      <i class="bi bi-grid"></i>
+      <i class="bi bi-file-text-fill"></i>
       <span>Courses</span>
     </a>
   </li>
@@ -48,7 +65,7 @@
       </li>
     </ul>
   </li><!-- End Tables Nav -->
-  @if(Session::has('userrole') && Session::get('userrole')=='Student')
+  <!-- @if(Session::has('userrole') && Session::get('userrole')=='Student')
   <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
       <i class="bi bi-layout-text-window-reverse"></i><span>Courses</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -60,8 +77,8 @@
         </a>
       </li>
     </ul>
-  </li><!-- End Tables Nav -->
-  @elseif(Session::has('userrole') && Session::get('userrole')=='Teacher')
+  </li>End Tables Nav -->
+  <!-- @elseif(Session::has('userrole') && Session::get('userrole')=='Teacher')
   <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
       <i class="bi bi-layout-text-window-reverse"></i><span>Courses Marks Assign</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -73,11 +90,11 @@
         </a>
       </li>
     </ul>
-  </li><!-- End Tables Nav -->
+  </li> End Tables Nav -->
   @endif
 
 
-  <li class="nav-item">
+  <!-- <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
       <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
@@ -103,9 +120,10 @@
         </a>
       </li>
     </ul>
-  </li><!-- End Forms Nav -->
+  </li> -->
+  <!-- End Forms Nav -->
 
-  <li class="nav-item">
+  <!-- <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
       <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
@@ -121,44 +139,17 @@
         </a>
       </li>
     </ul>
-  </li><!-- End Tables Nav -->
+  </li> -->
+  <!-- End Tables Nav -->
 
   
 
-  <li class="nav-heading text-white">Pages</li>
+  <li class="nav-heading text-white">Features</li>
 
   <li class="nav-item">
-    <a class="nav-link collapsed" href="users-profile.html">
-      <i class="bi bi-person"></i>
-      <span>Profile</span>
-    </a>
-  </li><!-- End Profile Page Nav -->
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="pages-faq.html">
-      <i class="bi bi-question-circle"></i>
-      <span>F.A.Q</span>
-    </a>
-  </li><!-- End F.A.Q Page Nav -->
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="pages-contact.html">
-      <i class="bi bi-envelope"></i>
-      <span>Contact</span>
-    </a>
-  </li><!-- End Contact Page Nav -->
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="pages-register.html">
-      <i class="bi bi-card-list"></i>
-      <span>Register</span>
-    </a>
-  </li><!-- End Register Page Nav -->
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="pages-login.html">
+    <a class="nav-link collapsed" href="{{ url('admin/login') }}">
       <i class="bi bi-box-arrow-in-right"></i>
-      <span>Login</span>
+      <span>Logout</span>
     </a>
   </li><!-- End Login Page Nav -->
 

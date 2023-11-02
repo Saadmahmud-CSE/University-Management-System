@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('courses', function (Blueprint $table) {
-            $table->id();
-            $table->string('semester');
-            $table->string('course_name');
-            $table->string('course_type');
-            $table->double('course_credit');
+        Schema::create('groups', function (Blueprint $table) {
+            $table->integer('team_member');
+            $table->bigInteger('member_1_id');
+            $table->string('member_1_name');
+            $table->bigInteger('member_2_id');
+            $table->string('member_2_name');
+            $table->bigInteger('member_3_id');
+            $table->string('member_3_name');
             $table->timestamps();
         });
     }
@@ -30,8 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses');
+        Schema::dropIfExists('groups');
     }
 };
-// $table->unsignedBigInteger('department_id');
-// $table->foreign('department_id')->references('id')->on('departments');

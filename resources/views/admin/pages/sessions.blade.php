@@ -4,8 +4,7 @@
 
 <div class="pagetitle">
         <h1>All sessions</h1>
-    </div><!-- End Page Title -->
-
+</div><!-- End Page Title -->
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
@@ -13,41 +12,34 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Create Session</h5>
-
-              <div class="row mb-3">
+              <form action="{{ url('add-session') }}" enctype="multipart/form-data" method="post">
+                @csrf
                 <div class="col-sm-100">
-                    <select class="form-select" aria-label="Default select example">
-                    <option selected>Select Session</option>
-                    <option value="1">Spring 2021</option>
-                    <option value="2">Fall 2021</option>
-                    <option value="2">Spring 2022</option>
-                    <option value="2">Fall 2022</option>
+                  <div class="form-group">
+                    <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Enter ID" name="id">
+                  </div>
+                </div>
+                <div class="col-sm-100 mt-4">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Session" name="session">
+                  </div>
+                </div>
+              <div class="col-sm-100 mt-4">
+                    <select name="session_type" class="form-select">
+                        <option selected>Session Type</option>
+                        <option value="Running">Running</option>
+                        <option value="Completed">Completed</option>
                     </select>
                 </div>
-              
-              </div>
-              <label class="col-sm-2 col-form-label">Session Type : </label>
-              <div class="form-check-inline">
-                <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value=""> Running
-                </label>
-              </div>
-              <div class="form-check-inline">
-                <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value=""> Completed
-                </label>
-              </div>
               <div class="text-center mt-4">
-                <button type="button" class="btn btn-dark btn-sm">Create Session</button>
+                <button type="submit" class="btn btn-dark btn-sm">Create Session</button>
               </div>
+              </form>
             </div>
-         
           </div>
-
         </div>
       </div>
     </section>
-
   </main><!-- End #main -->
 @endsection
 @section('scripts')

@@ -9,25 +9,28 @@
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
-
           <div class="card">
             <div class="card-body">
-            <h5 class="card-title">Departments</h5>
-              <div class="row mt-4">
-                <label class="col-sm-2 col-form-label">Department : </label>
-                <div class="col-sm-10">
-                    <select class="form-select" aria-label="Default select example">
-                    <option selected>Select Department</option>
-                    <option value="1">CSE</option>
-                    <option value="2">EEE</option>
-                    <option value="2">LAW</option>
-                    <option value="2">ENGLISH</option>
-                    </select>
+            <h5 class="card-title">Create Departments</h5>
+            <form action="{{url('add-dept')}}" enctype="multipart/form-data" method="post">
+                @csrf
+  
+                <div class="col-sm-100">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter ID" name="id">
+                  </div>
                 </div>
+              
 
-              </div>
+              
+                <div class="col-sm-100 mt-4">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Departments" name="dept_name">
+                  </div>
+                </div>
+              
               <div class="text-center mt-4">
-                <button type="button" class="btn btn-dark btn-sm">Create Department</button>
+                <button type="submit" class="btn btn-dark btn-sm">Create Department</button>
               </div>
             </div>
 
