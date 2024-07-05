@@ -15,7 +15,7 @@ class AuthController extends Controller
         $email = $req->email;
         $password = $req->password;
         $confirm = $req->cnf_password;
-        $role = $req->role;
+        $position = $req->position;
 
         if($password == $confirm){
             $user_exists = User::where('email','=',$email)->first();
@@ -27,7 +27,7 @@ class AuthController extends Controller
                 $obj->name=$name;
                 $obj->email=$email;
                 $obj->password=md5($password);
-                $obj->role=$role;
+                $obj->position=$position;
                 if($obj->save()){
                     return redirect()->back()->with('info', 'Account Created. Waiting for approval.');
                 }
@@ -45,15 +45,14 @@ class AuthController extends Controller
     public function userLogin(Request $req){
         $email = $req->email;
         $password = $req->password;
-        // SELECT * from users WHERE email='anik@gmail.com' AND password='';
         $user = User::where('email','=',$email)
              ->where('password','=',md5($password))
              ->first();
         if($user){
             if($user->is_approved==1){
                 Session::put('username',$user->name);
-                Session::put('userrole',$user->role);
-                return redirect('admin/dashboard');
+                Session::put('userrole',$user->position);
+                return redirect('dashboard');
             }
             else{
                 return redirect()->back()->with('info', 'Not Approved yet.');

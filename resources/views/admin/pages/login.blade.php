@@ -9,8 +9,8 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo1.png" alt="">
-                  <span class="d-none d-lg-block text-center">University Management System</span>
+                  <img src="https://mir-s3-cdn-cf.behance.net/projects/404/85b0a6140502555.Y3JvcCw2OTAsNTQwLDEyOSwxMzM.png" alt="">
+                  <span class="d-none d-lg-block text-center">Automated Payroll System</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -27,7 +27,7 @@
                   <strong>{{ Session::get('info') }}</strong> 
                   </div>
                   @endif
-                  <form method="post" action="{{ url('admin/user-login') }}" class="row g-3 needs-validation" novalidate>
+                  <form method="post" action="{{ url('user-login') }}" class="row g-3 needs-validation" novalidate>
                   @csrf
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Your Email</label>
@@ -37,14 +37,14 @@
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <input type="password" name="password" class="form-control" id="yourPassword" minlength="6" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
                     <div class="col-12">
                       <button class="btn btn-success w-100" type="submit">Login</button>
                     </div>
                     <div class="col-12">
-                      <p class="small mb-0">Don't have account? <a href="{{ url('admin/register') }}">Create an account</a></p>
+                      <p class="small mb-0">Don't have account? <a href="{{ url('register') }}">Create an account</a></p>
                     </div>
                   </form>
 

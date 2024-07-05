@@ -10,8 +10,8 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo1.png" alt="">
-                  <span class="d-none d-lg-block text-center">University Management System</span>
+                  <img src="https://mir-s3-cdn-cf.behance.net/projects/404/85b0a6140502555.Y3JvcCw2OTAsNTQwLDEyOSwxMzM.png" alt="">
+                  <span class="d-none d-lg-block text-center">Automated Payroll System</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -29,7 +29,7 @@
                   </div>
                   @endif
 
-                  <form method="post" action="{{ url('admin/create-user') }}" class="row g-3 needs-validation" novalidate>
+                  <form method="post" action="{{ url('create-user') }}" class="row g-3 needs-validation" novalidate>
                     @csrf
                     <div class="col-12">
                       <label for="yourName" class="form-label">Your Name</label>
@@ -45,21 +45,21 @@
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <input type="password" name="password" class="form-control" id="yourPassword" minlength="6" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Retype Password</label>
-                      <input type="password" name="cnf_password" class="form-control" id="yourPassword" required>
+                      <input type="password" name="cnf_password" class="form-control" id="yourPassword" minlength="6" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
                     <div class="col-12">
-                        <label for="" class="form-label">Select Role</label>
-                        <select name="role" id="" class="form-control">
-                            <option value="">Select Role</option>
-                            <option value="Student">Student</option>
-                            <option value="Teacher">Teacher</option>
+                        <label for="" class="form-label">Select Position</label>
+                        <select name="position" id="" class="form-control">
+                            <option value="">Select Position</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Employee">Employee</option>
                         </select>
                     </div>
 
@@ -67,7 +67,7 @@
                       <button class="btn btn-success w-100" type="submit">Create Account</button>
                     </div>
                     <div class="col-12">
-                      <p class="small mb-0">Already have an account? <a href="{{ url('admin/login') }}">Log in</a></p>
+                      <p class="small mb-0">Already have an account? <a href="{{ url('login') }}">Log in</a></p>
                     </div>
                   </form>
 

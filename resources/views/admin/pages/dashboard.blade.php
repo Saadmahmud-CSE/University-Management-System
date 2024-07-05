@@ -13,9 +13,10 @@
         <div class="col-lg-12">
           <!-- <div class="row"> -->
           <div class="card text-center">
-          <div class="card-body">
-            <h3 class="text-primary display-3 mt-3"><strong><em>University Management System</em></strong></h3>
-          </div>
+          <!-- <div class="card-body"> -->
+            <!-- <h3 class="text-primary display-3 mt-3"><strong><em>Automated Payroll System</em></strong></h3> -->
+            <img src="https://blogimages.softwaresuggest.com/blog/wp-content/uploads/2023/04/28004100/Automated-Payroll.png" width="1350px" height="600px">
+          <!-- </div> -->
         </div>
         </div>
       </div>
